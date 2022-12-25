@@ -10,11 +10,16 @@ fun printerError(s: String): String {
 }
 
 // Other Answer 1
-fun printerError1(s: String): String {
-	return ""
-}
+fun printerError1(s: String) = "${s.count { it !in 'a'..'m' }}/${s.length}"
 
 // Other Answer 2
 fun printerError2(s: String): String {
-	return ""
+    val errors = s.count { it !in 'a'..'m' }
+    val length = s.length
+    return "$errors/$length"
+}
+
+// Other Answer 3
+fun printerError3(s: String): String {
+    return "${s.count{it > 'm'}}/${s.length}"
 }
